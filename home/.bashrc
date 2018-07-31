@@ -9,3 +9,5 @@ alias ls='ls --color=auto -a'
 PS1='[\u@\h \W]\$ '
 
 source ~/.homesick/repos/homeshick/homeshick.sh
+
+eval $(keychain --eval --quiet id_rsa id_dsa)
