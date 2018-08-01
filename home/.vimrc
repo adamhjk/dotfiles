@@ -35,6 +35,9 @@ set history=1000
 " Reload vimrc
 map <leader>r :source ~/.vimrc<CR>
 
+" Folding is evil
+set nofoldenable
+
 " Indentation
 filetype indent on
 filetype plugin indent on
@@ -81,6 +84,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'rust-lang/rust.vim'
 Plug 'w0rp/ale'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 
 call plug#end()
 

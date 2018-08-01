@@ -28,6 +28,7 @@ export PATH=$PATH:~/.cargo/bin
 
 # Aliases
 alias ls='ls --color=auto -a'
+alias nvim='vim'
 
 # Homeshick
 source ~/.homesick/repos/homeshick/homeshick.sh
