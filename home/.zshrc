@@ -24,6 +24,7 @@ setopt HIST_IGNORE_ALL_DUPS
 
 # Path
 typeset -U path
+export PATH=$PATH:~/.cargo/bin
 
 # Aliases
 alias ls='ls --color=auto -a'
