@@ -8,13 +8,18 @@ promptinit
 bindkey -v
 export EDITOR=vim
 export VISUAL=vim
+export KEYTIMEOUT=1
 
 # Completion
 zstyle ':completion:*' menu select
 zstyle ':completion:*' rehash true
+
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
 setopt COMPLETE_ALIASES
-setopt INC_APPEND_HISTORY
-setopt HIST_FIND_NO_DUPS
+setopt SHARE_HISTORY
+setopt HIST_FCNTL_LOCK
 setopt HIST_IGNORE_ALL_DUPS
 
 # Path
@@ -50,4 +55,4 @@ zplug load
 
 # fzf widgets
 bindkey '^r'  fzf-insert-history
-
+source /usr/share/fzf/completion.zsh
