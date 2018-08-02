@@ -33,8 +33,13 @@ alias nvim='vim'
 # Homeshick
 source ~/.homesick/repos/homeshick/homeshick.sh
 
-# Keychain
-eval $(keychain --eval --quiet id_rsa id_dsa)
+if [[ -f "$HOME/.ssh/id_rsa" ]]; then
+  # Keychain
+  eval $(keychain --eval --quiet id_rsa id_dsa)
+fi
+
+# Theme
+export PROMPT_GEOMETRY_COLORIZE_SYMBOL=true
 
 # Zplug
 source ~/.zplug/init.zsh
@@ -58,3 +63,11 @@ zplug load
 # fzf widgets
 bindkey '^r'  fzf-insert-history
 source /usr/share/fzf/completion.zsh
+
+# If we are in SSH, and running termite, then set the term correctly
+if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
+  if [[ "$TERM" = "xterm-termite" ]]; then
+    export TERM=xterm-256color
+  fi
+fi
+

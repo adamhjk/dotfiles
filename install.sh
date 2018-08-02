@@ -14,4 +14,5 @@ source ~/.homesick/repos/homeshick/homeshick.sh
 
 if [[ ! -d "$HOME/.homesick/repos/dotfiles" ]]; then
   homeshick -b clone http://github.com/adamhjk/dotfiles
+  homeshick -f link dotfiles
 fi
