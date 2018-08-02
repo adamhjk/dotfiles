@@ -2,16 +2,8 @@
 
 Not really portable, but feel free to try. :)
 
-# Packages
+## Install
 
+```bash
+curl -sL https://raw.githubusercontent.com/adamhjk/dotfiles/master/install.sh > /tmp/install.sh
 ```
-$ pacman -S git fzf rg zsh keychain
-```
-
-## Zplug
-
-```
-$ curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
-```
-
-## Homeshick
