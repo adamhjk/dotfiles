@@ -2,8 +2,8 @@
 
 set -e
 
-pacman -Syu
-pacman -Sy git fzf ripgrep zsh keychain vim
+sudo pacman -Syu
+sudo pacman -Sy git fzf ripgrep zsh keychain vim
 if [[ ! -d "$HOME/.zplug" ]]; then
   curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 fi
