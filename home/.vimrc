@@ -86,6 +86,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'w0rp/ale'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+Plug 'HerringtonDarkholme/yats.vim'
 
 call plug#end()
 
@@ -116,3 +117,8 @@ command! -bang -nargs=* Rg
 
 " Rainbow Parenthesis Always
 au VimEnter * RainbowParentheses
+
+" Lists - local and quick
+map <leader>l :lopen<CR>
+map <leader>q :copen<CR>
+
