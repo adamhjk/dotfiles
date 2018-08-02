@@ -3,8 +3,7 @@
 set -e
 
 if [[ -f "/etc/arch-release" ]]; then
-  sudo pacman -Syu
-  sudo pacman -Sy git fzf ripgrep zsh keychain vim
+  echo true | sudo sudo pacman --noconfirm -Syu git fzf ripgrep zsh keychain vim
 fi
 if [[ ! -d "$HOME/.zplug" ]]; then
   curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
