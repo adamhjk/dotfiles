@@ -2,8 +2,10 @@
 
 set -e
 
-sudo pacman -Syu
-sudo pacman -Sy git fzf ripgrep zsh keychain vim
+if [[ -f "/etc/arch-release" ]]; then
+  sudo pacman -Syu
+  sudo pacman -Sy git fzf ripgrep zsh keychain vim
+fi
 if [[ ! -d "$HOME/.zplug" ]]; then
   curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 fi
