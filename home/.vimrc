@@ -122,3 +122,5 @@ au VimEnter * RainbowParentheses
 map <leader>l :lopen<CR>
 map <leader>q :copen<CR>
 
+" Rust
+let g:rustfmt_autosave = 1
