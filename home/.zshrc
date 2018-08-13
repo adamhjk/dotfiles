@@ -24,7 +24,7 @@ setopt HIST_IGNORE_ALL_DUPS
 
 # Path
 typeset -U path
-export PATH=$PATH:~/.cargo/bin
+export PATH=$PATH:~/.cargo/bin:~/bin
 
 # Aliases
 alias ls='ls --color=auto -a'
@@ -71,3 +71,11 @@ if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
   fi
 fi
 
+# Iterm 2
+test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
+
+# Travis CI
+[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
+
+# Hab Auth Token
+[ -f $HOME/.HAB_AUTH_TOKEN ] && source $HOME/.HAB_AUTH_TOKEN
