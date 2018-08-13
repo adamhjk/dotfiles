@@ -27,7 +27,11 @@ typeset -U path
 export PATH=$PATH:~/.cargo/bin:~/bin
 
 # Aliases
-alias ls='ls --color=auto -a'
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  alias ls='ls -aG'
+else
+  alias ls='ls --color=auto -a'
+fi
 alias nvim='vim'
 
 # Homeshick
@@ -62,7 +66,12 @@ zplug load
 
 # fzf widgets
 bindkey '^r'  fzf-insert-history
-source /usr/share/fzf/completion.zsh
+if [[ -f "/usr/share/fzf/completion.zsh" ]]; then
+  source /usr/share/fzf/completion.zsh
+fi
+if [[ -f "/usr/local/opt/fzf/shell/completion.zsh" ]]; then
+  source /usr/local/opt/fzf/shell/completion.zsh
+fi
 
 # If we are in SSH, and running termite, then set the term correctly
 if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
