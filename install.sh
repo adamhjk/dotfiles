@@ -7,7 +7,9 @@ if [[ -f "/etc/arch-release" ]]; then
 fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  if [[ ! -f /usr/local/bin/brew ]]; then 
+	  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  fi
   brew install git fzf keychain ripgrep vim
 fi
 
