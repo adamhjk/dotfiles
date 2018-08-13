@@ -5,6 +5,12 @@ set -e
 if [[ -f "/etc/arch-release" ]]; then
   echo true | sudo sudo pacman --noconfirm -Syu git fzf ripgrep zsh keychain vim
 fi
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  brew install git fzf keychain ripgrep vim
+fi
+
 if [[ ! -d "$HOME/.zplug" ]]; then
   curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 fi
