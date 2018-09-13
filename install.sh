@@ -3,14 +3,14 @@
 set -e
 
 if [[ -f "/etc/arch-release" ]]; then
-  echo true | sudo sudo pacman --noconfirm -Syu git fzf ripgrep zsh keychain vim
+  echo true | sudo sudo pacman --noconfirm -Syu git fzf ripgrep zsh keychain vim bat
 fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   if [[ ! -f /usr/local/bin/brew ]]; then 
 	  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
-  brew install git fzf keychain ripgrep vim
+  brew install git fzf keychain ripgrep vim bat
 fi
 
 if [[ ! -d "$HOME/.zplug" ]]; then
