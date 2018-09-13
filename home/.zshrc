@@ -33,6 +33,9 @@ else
   alias ls='ls --color=auto -a'
 fi
 alias nvim='vim'
+if [[ -f "/usr/bin/bat" ]]; then
+  alias cat='bat'
+fi
 
 # Homeshick
 source ~/.homesick/repos/homeshick/homeshick.sh
