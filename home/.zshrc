@@ -33,7 +33,7 @@ else
   alias ls='ls --color=auto -a'
 fi
 alias nvim='vim'
-if [[ -f "/usr/bin/bat" ]]; then
+if [[ -f "/usr/bin/bat" || -f "/usr/local/bin/bat" ]]; then
   alias cat='bat'
 fi
 
