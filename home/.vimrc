@@ -87,6 +87,12 @@ Plug 'w0rp/ale'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'HerringtonDarkholme/yats.vim'
+Plug 'reedes/vim-pencil'
+Plug 'dhruvasagar/vim-table-mode'
+Plug 'posva/vim-vue'
+Plug 'janko-m/vim-test'
+Plug 'jparise/vim-graphql'
+Plug 'mattn/emmet-vim'
 
 call plug#end()
 
@@ -107,6 +113,9 @@ map <leader>J :Tags<CR>
 map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 map <leader>s :Rg 
 
+" HTML tag completion
+" imap ,h/ </<C-X><C-O><C-X>
+
 " Ripgrep instead of ag
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
@@ -118,9 +127,25 @@ command! -bang -nargs=* Rg
 " Rainbow Parenthesis Always
 au VimEnter * RainbowParentheses
 
+" Pencil
+let g:pencil#wrapModeDefault = 'soft'
+let g:pencil#textwidth = 74
+let g:pencil#joinspaces = 0
+let g:pencil#cursorwrap = 1
+let g:pencil#conceallevel = 3
+let g:pencil#concealcursor = 'c'
+let g:pencil#softDetectSample = 20
+let g:pencil#softDetectThreshold = 130
+
+augroup pencil
+   autocmd!
+   autocmd filetype markdown,mkd call pencil#init()
+augroup END
+
 " Lists - local and quick
 map <leader>l :lopen<CR>
 map <leader>q :copen<CR>
 
 " Rust
 let g:rustfmt_autosave = 1
+

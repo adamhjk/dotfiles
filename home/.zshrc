@@ -1,7 +1,8 @@
 # Adam's ZSHRC
 
-autoload -Uz compinit promptinit
+autoload -Uz compinit promptinit bashcompinit
 compinit
+bashcompinit
 promptinit
 
 # VI Mode
@@ -24,7 +25,7 @@ setopt HIST_IGNORE_ALL_DUPS
 
 # Path
 typeset -U path
-export PATH=$PATH:~/.cargo/bin:~/bin
+export PATH=$PATH:~/.cargo/bin:~/bin:~/.gem/ruby/2.5.0/bin:~/npm/bin
 
 # Aliases
 if [[ "$OSTYPE" == "darwin"* ]]; then
