@@ -41,7 +41,7 @@ set nofoldenable
 " Indentation
 filetype indent on
 filetype plugin indent on
-set nowrap " Don't wrap lines
+set wrap " Do wrap lines
 set tabstop=2 " A tab is two spaces
 set shiftwidth=2
 set autoindent " Always auto indent
