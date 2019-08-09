@@ -93,6 +93,7 @@ Plug 'posva/vim-vue'
 Plug 'janko-m/vim-test'
 Plug 'jparise/vim-graphql'
 Plug 'mattn/emmet-vim'
+Plug 'adborden/vim-notmuch-address'
 
 call plug#end()
 
@@ -148,4 +149,13 @@ map <leader>q :copen<CR>
 
 " Rust
 let g:rustfmt_autosave = 1
+
+" Ale
+let g:ale_fixers = {
+      \ 'javascript': ['eslint'],
+      \ 'typescript': ['eslint'],
+      \ 'vue': ['eslint'],
+      \ 'css': ['prettier']
+      \}
+let g:ale_fix_on_save = 1
 

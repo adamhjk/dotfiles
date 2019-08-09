@@ -92,3 +92,6 @@ test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_in
 
 # Hab Auth Token
 [ -f $HOME/.HAB_AUTH_TOKEN ] && source $HOME/.HAB_AUTH_TOKEN
+
+# add Pulumi to the PATH
+export PATH=$PATH:$HOME/.pulumi/bin
