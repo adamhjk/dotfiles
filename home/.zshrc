@@ -25,7 +25,7 @@ setopt HIST_IGNORE_ALL_DUPS
 
 # Path
 typeset -U path
-export PATH=$PATH:~/.cargo/bin:~/bin:~/.gem/ruby/2.5.0/bin:~/npm/bin
+export PATH=$PATH:~/.cargo/bin:~/bin:~/.gem/ruby/2.5.0/bin:~/npm/bin:~/node/bin
 
 # Aliases
 if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -33,13 +33,20 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 else
   alias ls='ls --color=auto -a'
 fi
-alias nvim='vim'
+if [[ -f "/usr/bin/nvim" ]]; then
+  alias vim='nvim'
+fi
 if [[ -f "/usr/bin/bat" || -f "/usr/local/bin/bat" ]]; then
-  alias cat='bat'
+  alias cat='bat -p'
 fi
 
 # Homeshick
 source ~/.homesick/repos/homeshick/homeshick.sh
+
+# Gruvbox
+if [[ -f "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh" ]]; then
+ source $HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh
+fi
 
 if [[ -f "$HOME/.ssh/id_rsa" ]]; then
   # Keychain
@@ -66,7 +73,7 @@ if ! zplug check --verbose; then
     fi
 fi
 
-zplug load 
+zplug load
 
 # fzf widgets
 bindkey '^r'  fzf-insert-history
@@ -76,6 +83,7 @@ fi
 if [[ -f "/usr/local/opt/fzf/shell/completion.zsh" ]]; then
   source /usr/local/opt/fzf/shell/completion.zsh
 fi
+export FZF_DEFAULT_COMMAND="rg --files"
 
 # If we are in SSH, and running termite, then set the term correctly
 if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
@@ -95,3 +103,8 @@ test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_in
 
 # add Pulumi to the PATH
 export PATH=$PATH:$HOME/.pulumi/bin
+export WLR_NO_HARDWARE_CURSORS=1
+[[ /home/adam/bin/kubectl ]] && source <(kubectl completion zsh) # add autocomplete permanently to your zsh shell
+
+# Add zoxide
+eval "$(zoxide init zsh)"
