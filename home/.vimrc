@@ -23,7 +23,6 @@ filetype on
 syntax on
 set termguicolors " Use gui colors, true colors, in the terminal
 set background=dark
-let g:gruvbox_material_background = 'medium'
 
 " Font
 "set guifont=Inconsolata\ for\ Powerline\ 12
@@ -114,13 +113,24 @@ Plug 'mattn/emmet-vim'
 Plug 'adborden/vim-notmuch-address'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'sheerun/vim-polyglot'
-
+Plug 'jnurmine/Zenburn'
+Plug 'jaywilliams/vim-vwilight'
 call plug#end()
 
 runtime! macros/matchit.vim
 
 " Gruvbox configuration
 colorscheme gruvbox-material
+let g:gruvbox_material_background = 'medium'
+
+" Zenburn configuration
+"let g:zenburn_transparent = 1
+"let g:zenburn_high_Contrast = 1
+"let g:zenburn_unified_CursorColumn = 1
+"colorscheme zenburn
+
+" Twilight configuration
+"colorscheme vwilight
 
 " Airline
 let g:airline_powerline_fonts = 1

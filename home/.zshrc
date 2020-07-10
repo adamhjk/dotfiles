@@ -108,3 +108,9 @@ export WLR_NO_HARDWARE_CURSORS=1
 
 # Add zoxide
 eval "$(zoxide init zsh)"
+
+# Add Nix
+if [ -e /home/adam/.nix-profile/etc/profile.d/nix.sh ]; then . /home/adam/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+# Add direnv
+eval "$(direnv hook zsh)"
