@@ -1,0 +1,23 @@
+{
+  "eslint.autoFix": true,
+  "rust-analyzer.inlayHints.chainingHints": false,
+  "rust-analyzer.cargo.loadOutDirsFromCheck": true,
+  "rust-analyzer.procMacro.enable": true,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.file.tabCD": false,
+  "vetur.format.enable": true,
+  "vetur.format.defaultFormatter.html": "prettier",
+  "vetur.format.defaultFormatter.js": "prettier-eslint",
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "graphql",
+    "typescript",
+    "javascript",
+    "rust",
+    "vue",
+    "markdown",
+    "yaml",
+    "json",
+    "jsonc"
+  ]
+}
