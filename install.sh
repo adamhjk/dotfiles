@@ -1,5 +1,7 @@
 #!/usr/bin/bash 
 
+# hello anna
+
 set -e
 
 if [[ -f "/etc/arch-release" ]]; then
